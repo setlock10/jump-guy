@@ -1,0 +1,56 @@
+body{
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-x: hidden; 
+}
+
+#game{
+    width: 1000px;
+    height: 600px;
+    border: 1px solid black;
+    margin:0%;
+}
+
+#character{
+    width: 128px;
+    height: 170px;
+    position: relative;
+    top: 400px; 
+    scale:.75;
+    left:0px;
+}
+
+.background-run{
+    background: url("./harry-run.png");
+}
+
+.background-stand{
+    background: url("./harry-stand.png");
+}
+
+
+@keyframes sprite-run {
+    from { background-position: 0px; }
+    to { background-position: -640px; }
+}
+
+.run{
+    animation: sprite-run 500ms linear;
+    animation-timing-function: steps(5);
+    animation-iteration-count: infinite;
+}
+
+.flip{
+    transform: scaleX(-1);
+}
+
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+
+.animate-jump{
+    animation: jump 300ms linear;
+}
